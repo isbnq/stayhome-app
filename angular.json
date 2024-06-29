@@ -133,6 +133,12 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "https://isbnq.github.io/stayhome-app/"
+          }
         }
       }
     }
