@@ -1,0 +1,82 @@
+<form class="form" [formGroup]="group" (ngSubmit)="onSubmit()">
+  <div class="rows rows-full-width">
+    <h3 class="h3" class="h3">Название рецепта</h3>
+    <tui-input class="large-input" [formControl]="controls.title" [tuiTextfieldLabelOutside]="true" />
+  </div>
+
+  <div class="rows rows-full-width">
+    <h3 class="h3">Изображение</h3>
+    <recipe-edit-image-upload [formControl]="controls.imageUrl" style="height: 50vh;" class="large-image" uploadName="heap/testimage"/>
+  </div>
+  
+  <div class="rows rows-full-width">
+    <h3 class="h3">Описание</h3>
+    <tui-textarea class="textarea" [formControl]="controls.description" [expandable]="true" [tuiTextfieldLabelOutside]="true" />
+  </div>
+
+  <div class="rows rows-full-width">
+    <h3 class="h3">Порции</h3>
+    <tui-input-number class="small-input" [formControl]="controls.servings" decimal="never" [step]="1" [min]="1" [tuiTextfieldLabelOutside]="true" />
+  </div>
+  
+  <div class="rows rows-full-width">
+    <h3 class="h3">Время приготовления</h3>
+    <recipe-edit-cooking-time class="cols cols-min-width" [formControl]="controls.cookingTime" />
+  </div>
+
+  <div class="rows rows-full-width">
+    <h3 class="h3">Каллорийность</h3>
+    <div class="cols cols-min-width">
+      <tui-input-number class="small-input" [formControl]="controls.kcalories" decimal="never" postfix="ккал" [tuiTextfieldLabelOutside]="true" />
+    </div>
+  </div>
+
+  <div class="rows rows-full-width">
+    <h3 class="h3">Макронутриенты</h3>
+    <div class="cols cols-min-width">
+      <tui-input-number class="small-input" [formControl]="controls.protein" decimal="never" [min]="0" [max]="100" postfix="грамм">
+        Белки
+      </tui-input-number>
+      <tui-input-number class="small-input" [formControl]="controls.fat" decimal="never" [min]="0" [max]="100" postfix="грамм">
+        Жиры
+      </tui-input-number>
+      <tui-input-number class="small-input" [formControl]="controls.carbohydrates" decimal="never" [min]="0" [max]="100" postfix="грамм">
+        Углеводы
+      </tui-input-number>
+    </div>
+  </div>
+
+  <div class="rows input-array">
+    <h3 class="h3">Инструкция</h3>
+
+    <div class="input-array__item" *ngFor="let instructionStep of controls.instruction.controls; let index=index">
+      <recipe-edit-image-upload class="medium-image input-array__item__image" [formControl]="instructionStep.controls.imageUrl" [uploadName]="'heap/instruction/step-' + index" />
+      <tui-textarea class="textarea" [formControl]="instructionStep.controls.text" class="input-array__item__text" [expandable]="true">
+        Шаг {{index + 1}}
+      </tui-textarea>
+
+      <button tuiIconButton class="input-array__item__delete" icon="tuiIconXLarge" appearance="secondary-destructive" type="button" size="m" (click)="recipeForm.removeInstructionStep(index)"></button>
+    </div>
+    <button tuiIconButton class="input-array__add" icon="tuiIconPlusLarge" appearance="secondary" type="button" size="m" (click)="recipeForm.addInstructionStep()"></button>
+  </div>
+
+  <div class="rows input-array">
+    <h3 class="h3">Засетки от автора</h3>
+
+    <div class="input-array__item" *ngFor="let note of controls.notes.controls; let index=index">
+      <tui-textarea class="textarea" [formControl]="note.controls.text" class="input-array__item__text" [expandable]="true">
+        Заметка {{index + 1}}
+      </tui-textarea>
+
+      <button tuiIconButton class="input-array__item__delete" icon="tuiIconXLarge" appearance="secondary-destructive" type="button" size="m" (click)="recipeForm.removeNote(index)"></button>
+    </div>
+    <button tuiIconButton class="input-array__add" icon="tuiIconPlusLarge" appearance="secondary" type="button" size="m" (click)="recipeForm.addNote()"></button>
+  </div>
+
+
+  <div class="cols">
+    <button tuiButton type="submit">Сохранить</button>
+    <button tuiButton (click)="clear()">Очистить</button>
+  </div>
+  
+</form>

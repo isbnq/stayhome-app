@@ -1,0 +1,10 @@
+<div class="items">
+  <tui-island
+    *ngFor="let note of data.notes"
+    [hoverable]="true"
+  >
+    <div class="tui-island__content text-wrap">
+      <p class="tui-list__item text">{{ note.text }}</p>
+    </div>
+  </tui-island>
+</div>

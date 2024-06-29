@@ -1,0 +1,12 @@
+<div class="pair">
+  <tui-island [hoverable]="true" class="item">
+    <div class="tui-island__content">
+      <img *ngIf="data.imageUrl" loading="lazy" class="image" [src]="data.imageUrl" alt="recipe image">
+    </div>
+  </tui-island>
+  <tui-island [hoverable]="true" class="item">
+    <div class="tui-island__content">
+      <p class="description">{{ data.description }}</p>
+    </div>
+  </tui-island>
+</div>

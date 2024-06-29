@@ -1,0 +1,30 @@
+.items {
+  display: flex;
+  flex-flow: column wrap;
+  gap: var(--tui-padding-l);
+}
+
+.pair {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: left;
+  gap: var(--tui-padding-l);
+}
+
+.image-wrap {
+  min-width: 300px;
+}
+
+.text-wrap {
+  min-width: 300px;
+}
+
+.image {
+  max-width: 100%;
+  max-height: 45vh;
+  border-radius: var(--tui-radius-l);
+}
+
+.text {
+  font: var(--tui-font-text-xl);
+}

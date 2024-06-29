@@ -1,0 +1,13 @@
+.items {
+  display: flex;
+  flex-flow: column wrap;
+  gap: var(--tui-padding-l);
+}
+
+.text {
+  &::before {
+    background-color: var(--tui-text-03);
+  }
+  word-wrap: break-word;
+  word-break: break-all;
+}

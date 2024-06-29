@@ -1,0 +1,17 @@
+.items {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: var(--tui-padding-l);
+}
+
+.item {
+  flex: 1;
+  flex-grow: 1;
+  min-width: 150px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,24 @@
+<div class="container">
+  <h2 class="tui-text_h1">{{ recipeData.title }}</h2>
+  <recipe-view-description [value]="recipeData" />
+
+  <div class="tui-space_vertical-4"></div>
+
+  <recipe-view-params [value]="recipeData" />
+
+  <div class="tui-space_vertical-4"></div>
+
+  <h2 class="tui-text_h2">Ингредиенты</h2>
+  <recipe-view-ingredients [value]="recipeData" />
+
+  <div class="tui-space_vertical-4"></div>
+
+  <h2 class="tui-text_h2">Инструкция</h2>
+  <recipe-view-instruction [value]="recipeData" />
+
+  <div class="tui-space_vertical-4"></div>
+
+  <h2 class="tui-text_h3">Заметки от автора</h2>
+  <recipe-view-notes [value]="recipeData" />
+
+</div>

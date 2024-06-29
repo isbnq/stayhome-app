@@ -1,0 +1,23 @@
+.items {
+  display: flex;
+  flex-flow: column wrap;
+  width: 100%;
+  max-width: 500px;
+  gap: var(--tui-padding-m);
+}
+
+.pair {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+}
+
+.product {
+  max-width: 150px;
+  min-width: 150px;
+}
+
+.quantity {
+  max-width: 150px;
+  min-width: 150px;
+}

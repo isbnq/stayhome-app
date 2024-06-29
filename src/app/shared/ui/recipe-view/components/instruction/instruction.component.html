@@ -1,0 +1,15 @@
+<div class="items">
+  <tui-island
+    *ngFor="let item of data.instruction"
+    [hoverable]="true"
+  >
+    <div class="tui-island__content pair">
+      <div class="image-wrap">
+        <img *ngIf="item.imageUrl" loading="lazy" class="image" [src]="item.imageUrl" alt="recipe image">
+      </div>
+      <div class="text-wrap">
+        <p class="text">{{ item.text }}</p>
+      </div>
+    </div>
+  </tui-island>
+</div>

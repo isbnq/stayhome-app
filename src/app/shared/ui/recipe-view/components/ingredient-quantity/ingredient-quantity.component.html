@@ -1,0 +1,19 @@
+<div class="wrapper">
+  <p class="quantity">{{ quantity | unitConvert:viewUnit.value }}</p>
+  <form class="unit_select">
+    <tui-select [formControl]="viewUnit" [valueContent]="viewUnitContent" [tuiTextfieldLabelOutside]="true">
+      <tui-data-list *tuiDataList>
+        <button
+          *ngFor="let viewUnit of viewUnits"
+          tuiOption
+          [value]="viewUnit"
+        >
+          {{ viewUnit | unitLabel }}
+        </button>
+      </tui-data-list>
+    </tui-select>
+  </form>
+</div>
+<ng-template #viewUnitContent let-viewUnit>
+  {{ viewUnit | unitLabel }}
+</ng-template>

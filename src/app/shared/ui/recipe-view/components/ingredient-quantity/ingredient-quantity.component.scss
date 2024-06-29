@@ -1,0 +1,14 @@
+.wrapper {
+  display: flex;
+  flex-flow: row;
+  width: 100%;
+  justify-content: stretch;
+  gap: var(--tui-padding-s);
+}
+.quantity {
+  text-align: right;
+  width: 4em;
+}
+.unit_select {
+  width: 100%;
+}

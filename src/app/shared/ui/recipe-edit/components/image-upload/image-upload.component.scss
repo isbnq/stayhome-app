@@ -1,0 +1,47 @@
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px dashed #ccc;
+  border-radius: 1rem;
+  min-width: 200px;
+  min-height: 200px;
+  width: 100%;
+  height: 100%;
+}
+.disabled {
+  opacity: .5;
+  cursor: default;
+
+  &>* {
+    cursor: default;
+  }
+}
+.image-input {
+  opacity: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+.image-preview-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+.image-preview {
+  border-radius: 1rem;
+  position: absolute;
+  max-width: 90%;
+  height: 100%;
+  object-fit: cover;
+}
+.placeholder {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column wrap;
+}

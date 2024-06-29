@@ -1,0 +1,58 @@
+<div class="items">
+  <tui-island
+    *ngIf="data.protein !== null"
+    class="item"
+    [hoverable]="true"
+    textAlign="center"
+  >
+    <div class="tui-island__content">
+      <recipe-view-macronutrients [value]="[data.protein, data.fat, data.carbohydrates]" />
+    </div>
+  </tui-island>
+
+  <tui-island
+    *ngIf="data.kcalories !== undefined"
+    class="item"
+    [hoverable]="true"
+    textAlign="center"
+  >
+    <div class="tui-island__content">
+      <figure class="tui-island__figure">
+        <tui-svg src="tuiIconBatteryChargingLarge"></tui-svg>
+      </figure>
+    </div>
+    <p class="tui-island__paragraph">
+      {{ data.kcalories }} кКал / 100 г
+    </p>
+  </tui-island>
+
+  <tui-island
+    class="item"
+    [hoverable]="true"
+    textAlign="center"
+  >
+    <div class="tui-island__content">
+      <figure class="tui-island__figure">
+        <tui-svg src="tuiIconClockLarge"></tui-svg>
+      </figure>
+    </div>
+    <p class="tui-island__paragraph">
+      {{ data.cookingTime }} мин
+    </p>
+  </tui-island>
+
+  <tui-island
+    class="item"
+    [hoverable]="true"
+    textAlign="center"
+  >
+    <div class="tui-island__content">
+      <figure class="tui-island__figure">
+        <tui-svg src="tuiIconUsersLarge"></tui-svg>
+      </figure>
+    </div>
+    <p class="tui-island__paragraph">
+      Порции: {{ data.servings }}
+    </p>
+  </tui-island>
+</div>

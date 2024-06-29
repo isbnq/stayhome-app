@@ -1,0 +1,22 @@
+<div class="items">
+  <tui-island
+    *ngFor="let ingredient of data.ingredients"
+    [hoverable]="true"
+  >
+    <div class="tui-island__content pair">
+      <div class="product">
+        <p class="product_name">{{ ingredient.product.name }}</p>
+      </div>
+
+      <div class="quantity">
+        <recipe-view-ingredient-quantity
+          *ngIf="ingredient.quantity; else noQuantity"
+          [value]="ingredient.quantity"
+        />
+        <ng-template #noQuantity>
+          <p>По вкусу</p>
+        </ng-template>
+      </div>
+    </div>
+  </tui-island>
+</div>

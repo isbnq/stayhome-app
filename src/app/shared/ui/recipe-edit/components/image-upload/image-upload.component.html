@@ -1,0 +1,19 @@
+<div class="container" [ngClass]="disabled ? 'disabled' : ' '" [style]="style">
+  <div *ngIf="!imageUrl" class="placeholder">
+    <tui-marker-icon class="placeholder__image" mode="link" src="tuiIconUploadCloudLarge" />
+    <p class="tui-text_body-m placeholder__text">Выберите изображение или перетащите сюда</p>
+  </div>
+  <input *ngIf="!imageUrl" #fileInput [disabled]="disabled" (change)="fileInputChange()" (blur)="onBlur()" type="file" class="image-input" accept="image/*" capture="environment" />
+
+  <button
+    *ngIf="imageUrl"
+    class="image-preview-close"
+    tuiIconButton
+    appearance="secondary"
+    type="button"
+    icon="tuiIconXLarge"
+    size="m"
+    (click)="cleanFileInput()">
+  </button>
+  <img *ngIf="imageUrl" class="image-preview" [src]="imageUrl" alt="Recipe image">
+</div>

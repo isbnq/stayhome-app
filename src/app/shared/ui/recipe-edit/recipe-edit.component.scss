@@ -1,0 +1,103 @@
+.form {
+  display: flex;
+  flex-flow: column wrap;
+
+  justify-content: center;
+  align-items: stretch;
+
+  gap: 3rem;
+
+  max-width: 1280px;
+}
+
+.rows {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.rows-full-width {
+  &>* {
+    width: 100%;
+  }
+}
+
+.cols {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cols-min-width {
+  &>* {
+    min-width: 300px;
+  }
+}
+
+.small-input {
+  max-width: 300px;
+  text-align: center;
+}
+
+.large-input {
+  max-width: 768px;
+  text-align: center;
+}
+
+.textarea {
+  max-width: 768px;
+  word-break: break-all;
+}
+
+.large-image {
+  max-width: 768px;
+}
+
+.medium-image {
+  max-width: 400px;
+}
+
+.h3 {
+  font: var(--tui-font-heading-3);
+  color: var(--tui-text-02);
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.text {
+  font: var(--tui-font-text-xl);
+}
+
+.input-array {
+  &__item {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: stretch;
+    justify-content: stretch;
+    gap: 1rem;
+    width: 100%;
+    &__image {
+      min-height: 35vh;
+      flex: 1 auto;
+    }
+  
+    &__text {
+      flex: 3;
+      width: 100%;
+      word-wrap: break-word;
+    }
+  
+    &__delete {
+      
+    }
+  }
+
+  &__add {
+    min-width: 80%;
+    align-self: center;
+  }
+}

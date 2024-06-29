@@ -1,0 +1,21 @@
+.pair {
+  display: flex;
+  flex-flow: row wrap;
+  gap: var(--tui-padding-l);
+}
+
+.item {
+  min-width: 300px;
+  flex: 1;
+}
+
+.image {
+  max-width: 100%;
+  max-height: 55vh;
+  margin: auto;
+  border-radius: var(--tui-radius-l);
+}
+
+.description {
+  font: var(--tui-font-text-xl);
+}

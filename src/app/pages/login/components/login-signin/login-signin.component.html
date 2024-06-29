@@ -1,0 +1,13 @@
+<form class="login-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <tui-input [formControl]="form.controls.email">
+    E-mail
+    <input tuiTextfield autocomplete="email" type="email">
+  </tui-input>
+  <tui-input-password [formControl]="form.controls.password">
+    Пароль
+    <input tuiTextfield>
+  </tui-input-password>
+  <button tuiButton type="submit">Войти</button>
+
+  <p *ngIf="errorMessage" class="error-message">{{errorMessage}}</p>
+</form>
